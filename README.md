@@ -50,8 +50,6 @@ terminal 2 = svelte(client dir)
 	pipenv install
 	#==start dev==
 	flask run
-	#==heroku local==
-	heroku local
 
 
 	# Terminal 2
@@ -61,8 +59,15 @@ terminal 2 = svelte(client dir)
 	pnpm run dev
 
 
-
 ```
+
+### Deploy
+publish project to github
+1. open heroku
+2. create new app
+3. connect with github
+4. and press deploy
+
 -------------------------------
 // From original repo(ignore) didnt work for me so i modified the repo
 
