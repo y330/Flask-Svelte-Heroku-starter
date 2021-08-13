@@ -1,51 +1,76 @@
-# Flask for Heroku
+# Svelte.js + Flask + Heroku
+##  [Yonah Aviv](https://yonah.ml)
+Flask with support for Svelte Single Page applications(SPA), and easy deployment to heroku. Anything other than svelte may require you to change the of inside the client folder. Make sure the client folder looks something like this(or make sure webpack or rollup or snowpack builds your source files to result in the following)
 
-_The unofficial :slightly_smiling_face: starter pack_
+```
+client/
+	public/
+		build/
+			bundle.css
+			bundle.js
+		index.html
+		...
+	...
+...
+```
+The client folder is just the official svelte starter with a couple of modifications.
 
-This repository has everything you need to get a _basic_ web app in Python to run on Heroku. Consequently, the repo has the barest minimum files needed to build a web app with Flask.
+this repo is based on a medium article and a github repository
 
 
-## How to use
+Features:
+- Python 3.9
+- Flask 2.0
+- Pipenv [Pipfile](Pipfile)
+- Heroku integration for easy deployment [Procfile](Procfile)
+- Svelte(SPA) in the [client/](client/) folder.
+- rollup
 
-1. Clone or fork this repository.
-1. Get yourself a Heroku account if you don't already have one.
-1. Create an app on Heroku.
-    1.  On your Heroku dashboard, click New > Create new app.
-    1.  Follow the on-screen instructions to name your app, and connect it to your cloned or forked repository. If this is the first time you are using your Heroku account to connect to anything on your GitHub account, you're asked to allow inter-site authentication. 
-    1.  Choose the manual option for deployment. 
-1. After the app is created, deploy it manually.
-1. After the app is deployed, test it. It should work. If it doesn't, review the files in the repository and try again.
 
-## Files in this repository
+If there is a .venv folder in project root directory, Pipenv will create a local environment instead of a global one.
 
-<dl>
 
-<dt>templates/first_page.html *</dt>
-<dd><i>Required</i>. This is the app home page that's displayed when the app is launched.</dd>
+I suggest you use two seperate terminal tabs(one for root, one for client). to do this in VScode, press
+```
+ctrl+` for terminal
 
-<dt>templates/response_page.html *</dt>
-<dd><i>Required</i>. This page is displayed after someone enters an input on the app home page.</dd>
-  
-<dt>flaskStarter.py *</dt>
-<dd><i>Required</i>. This is your Flask app.</dd>
+ctrl+shift+5 for a new terminal beside the original one
 
-<dt>LICENSE</dt>
-<dd><i>Optional</i>. The license under which I'm making this repo available. Not required for the app to work.</dd>
+in the new terminal:
+cd client
 
-<dt>Pipfile *</dt>
-<dd><i>Required</i>. Tells Heroku which Python packages to install in the environment before building the app.</dd>
+and then your done
+terminal 1 = flask(root dir)
+terminal 2 = svelte(client dir)
 
-<dt>Procfile *</dt>
-<dd><i>Required</i>. Tells Heroku how to launch the app (which, in this case, is as a web page).</dd>
 
-<dt>README.md</dt>
-<dd><i>Optional</i>. Not needed to make your app run. Is also the file you're reading right now.</dd>
+````
+```bash
+	# Terminal 1
+	pipenv install
+	#==start dev==
+	flask run
+	#==heroku local==
+	heroku local
 
-<dt>requirements.txt *</dt>
-<dd><i>Required</i>. Tells Heroku the versions of the Python packages needed.</dd>
 
-</dl>
+	# Terminal 2
+	pnpm i
 
-## Why I made this template
+	#==start dev==
+	pnpm run autobuild
 
-Click to read :point_right: [![Post on dev.to](https://img.shields.io/badge/Post%20on-dev.to-blueviolet)](https://dev.to/aninditabasu/how-to-move-your-flask-app-from-the-local-machine-to-the-heroku-cloud-egk)
+
+
+```
+-------------------------------
+// From original repo(ignore) didnt work for me so i modified the repo
+
+A super simple example of using Flask to serve a Svelte app and use it as a backend server.
+
+Run the following for development:
+
+- `python server.py` to start the Flask server.
+- `cd client; npm install; npm run autobuild` to automatically build and reload the Svelte frontend when it's changed.
+
+This example just queries the Flask server for a random number.
