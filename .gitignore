@@ -1,4 +1,8 @@
 .DS_Store
 node_modules
 .vscode
-.venv/*
+.venv/.project
+.venv/pyvenv.cfg
+.venv/src
+.venv/Lib
+.venv/Scripts
