@@ -10,6 +10,10 @@
 
 <main>
   <h1>Random Number Generator</h1>
+  <a href="https://yonah.ml">Yonah Aviv </a>
+  <a href="https://github.com/y330/Flask-Svelte-Heroku-starter">
+    <button>Github Repo</button></a
+  >
 
   <span>This project is built with Flask, Svelte, Scss, and Heroku</span>
 
@@ -48,7 +52,7 @@
     }
     &:active {
       background-color: #233;
-      border-color: #ff3e00;
+      transform: scale(0.92);
     }
   }
 </style>

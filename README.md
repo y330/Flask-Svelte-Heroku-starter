@@ -58,7 +58,7 @@ terminal 2 = svelte(client dir)
 	pnpm i
 
 	#==start dev==
-	pnpm run autobuild
+	pnpm run dev
 
 
 
