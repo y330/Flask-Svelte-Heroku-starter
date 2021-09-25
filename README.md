@@ -1,7 +1,7 @@
 # Svelte.js + Flask + Heroku Starter
 The demo lives at https://flask-svelte-heroku.herokuapp.com)
 
-![image](https://user-images.githubusercontent.com/68514914/134782565-6c0da447-2fbb-4405-82dc-ad2a6c841432.png)
+![image](https://github.com/y330/Flask-Svelte-Heroku-starter/raw/master/flask-svelte-heroku-ss.png)
 
 ##  [Yonah Aviv](https://yonah.ml)
 Flask with support for Svelte Single Page applications(SPA), and easy deployment to heroku. Anything other than svelte may require you to change the of inside the client folder. Make sure the client folder looks something like this(or make sure webpack or rollup or snowpack builds your source files to result in the following)
